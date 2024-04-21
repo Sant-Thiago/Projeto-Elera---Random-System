@@ -24,6 +24,8 @@
     --azul: rgb(67, 100, 130);
     --branco: rgb(245, 245, 245);
     --cinza: rgb(89, 89, 89);
+    --cinzaClaroOpaco: rgba(230, 230, 230, 0.64);
+    --cinzaClaro: rgb(228, 228, 228)
 }
 
 * {
@@ -75,12 +77,12 @@ section {
 }
 
 .container-etapas {
-    width: 420px;
+    width: 310px;
     height: 100%;
 
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .etapas {
@@ -127,3 +129,70 @@ section {
     color: var(--cinza);
 }
 
+.container-entradas {
+    width: calc(100% - 310px);
+    height: 100%;
+    
+    background-color: var(--cinzaClaroOpaco);
+
+    border-radius: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.entradas {
+    width: 85%;
+    height: 76%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.entradas > .rotulo {
+    width: 100%;
+    
+    padding: 5px 0;
+
+    color: var(--cinza);
+}
+
+.entradas > .rotulo > p {
+    font-family: var(--bold);
+    font-size: 20px;
+}
+
+.entradas > .rotulo > span {
+    font-size: 10px;
+}
+
+textarea {
+    width: 100%;
+
+    background-color: var(--cinzaClaro);
+    
+    margin-bottom: 15px;
+    
+    border: none;
+    border-radius: 30px;
+    
+    scrollbar-color: var(--azul);
+    scrollbar-width: 2px;
+    
+    overflow-y: scroll;
+
+}
+
+.entradas > .arquivo {
+    width: 100%;
+
+    padding: 20px;
+
+    border-radius: 20px;
+
+    background-color: var(--cinzaClaro);
+}
