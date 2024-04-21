@@ -201,7 +201,6 @@ textarea {
     outline: transparent;
 
     color: var(--azul);
-
 }
 
 textarea::-webkit-scrollbar {
