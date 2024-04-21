@@ -54,7 +54,7 @@ body {
 
 main {
     width: 80%;
-    height: 80%;
+    height: 90%;
 
     display: flex;
     justify-content: space-between;
@@ -64,13 +64,14 @@ main {
 main > h1 {
     font-size: 85px;
     font-family: var(--bold);
+    margin-bottom: 15px;
 
     color: var(--cinza);
 }
 
 section {
     width: 100%;
-    height: 75%;
+    height: 85%;
 
     display: flex;
     justify-content: space-between;
@@ -144,7 +145,7 @@ section {
 
 .entradas {
     width: 85%;
-    height: 76%;
+    height: 80%;
 
     display: flex;
     flex-direction: column;
@@ -156,30 +157,38 @@ section {
 .entradas > .rotulo {
     width: 100%;
     
-    padding: 5px 0;
-
     color: var(--cinza);
+
+    line-height: .9;
 }
 
 .entradas > .rotulo > p {
     font-family: var(--bold);
-    font-size: 20px;
+    font-size: 22px;
 }
 
 .entradas > .rotulo > span {
-    font-size: 10px;
+    font-size: 12px;
 }
 
 textarea {
     width: 100%;
+    height: 170px;
+
+    padding: 10px 15px;
+    font-size: 19px;
 
     background-color: var(--cinzaClaro);
-    
-    margin-bottom: 15px;
-    
+        
+    margin-bottom: 10px;
+
     border: none;
     border-radius: 30px;
     
+    outline: transparent;
+
+    color: var(--azul);
+
     scrollbar-color: var(--azul);
     scrollbar-width: 2px;
     
@@ -190,9 +199,41 @@ textarea {
 .entradas > .arquivo {
     width: 100%;
 
-    padding: 20px;
+    padding: 25px;
 
     border-radius: 20px;
 
     background-color: var(--cinzaClaro);
+}
+
+.entradas > .arquivo > label > input {
+    display: none;
+}
+
+.entradas > .arquivo > label {    
+    padding: 14px 40px;
+
+    font-family: var(--bold);
+    font-size: 12px;
+
+    color: var(--branco);
+
+    background-color: var(--azul);
+
+    border-radius: 20px;
+}
+
+.entradas > button {
+    padding: 15px;
+
+    
+    font-family: var(--bold);
+    font-size: 12px;
+
+    color: var(--branco);
+
+    background-color: var(--azul);
+
+    border: none;
+    border-radius: 20px;
 }
