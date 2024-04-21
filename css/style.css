@@ -1,0 +1,85 @@
+@font-face {
+  font-family: Product-Sans-Bold;
+  src: url('../assets/fonts/Product\ Sans\ Bold.ttf');
+}
+@font-face {
+  font-family: Product-Sans-Bold-Italic;
+  src: url('../assets/fonts/Product\ Sans\ Bold\ Italic.ttf');
+}
+@font-face {
+  font-family: Product-Sans-Italic;
+  src: url('../assets/fonts/Product\ Sans\ Italic.ttf');
+}
+@font-face {
+  font-family: Product-Sans-Regular;
+  src: url('../assets/fonts/Product\ Sans\ Regular.ttf');
+}
+
+:root {
+  --bold: Product-Sans-Bold;
+  --bold-italic: Product-Sans-Bold-Italic;
+  --italic: Product-Sans-Italic;
+  --regular: Product-Sans-Regular;
+}
+
+* {
+  box-sizing: border-box;
+
+  margin: 0;
+
+  padding: 0;
+
+  font-family: Product-Sans-Regular;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+
+  background-image: url('../assets/images/Fundo\ Elera\ -\ T_Sant.png');
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  width: 80%;
+  height: 80%;
+
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+main > h1 {
+  font-size: 55px;
+  font-family: var(--bold);
+
+  color: rgb(89, 89, 89);
+}
+
+section {
+  width: 100%;
+  height: 75%;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-etapas {
+  width: 30%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.etapas {
+  width: 100%;
+  height: 300px;
+}
