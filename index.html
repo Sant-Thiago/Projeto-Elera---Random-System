@@ -14,7 +14,10 @@
 
     <main>
 
-        <h1 id="titulo">Sorteador</h1>
+        <h1 id="titulo">
+            <div class="background-dynamic class-piscar"></div>
+            Sorteador
+        </h1>
 
         <section>
 
@@ -24,21 +27,21 @@
 
                     <div class="celula">
                         <div class="check">
-                            <input type="checkbox" id="check_1">
+                            <input type="checkbox" name="etapa" checked id="check_1">
                             <i class="fa fa-check"></i>
                         </div>
                         <p>Inserir <b>itens</b></p>
                     </div>
                     <div class="celula">
                         <div class="check">
-                            <input type="checkbox" id="check_2">
+                            <input type="checkbox" name="etapa" id="check_2">
                             <i class="fa fa-check"></i>
                         </div>
                         <p>Escolha <b>quantidade</b></p>
                     </div>
                     <div class="celula">
                         <div class="check">
-                            <input type="checkbox" id="check_3">
+                            <input type="checkbox" name="etapa" id="check_3">
                             <i class="fa fa-check"></i>
                         </div>
                         <p>Sorteio <b>concluído</b></p>
@@ -50,13 +53,13 @@
 
             <div class="container-entradas">
 
-                <div class="entradas">
+                <div class="entradas" id="container">
 
                     <div class="rotulo">
                         <p>Escreva os itens</p>
                         <span>*Separados por linha</span>
                     </div>
-                    <textarea id=""></textarea>
+                    <textarea id="input" wrap="soft"></textarea>
                     <div class="rotulo">
                         <p>Upload do arquivo</p>
                         <span>*.CSV</span>

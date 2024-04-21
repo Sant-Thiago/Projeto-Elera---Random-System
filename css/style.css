@@ -65,6 +65,9 @@ main {
 main > h1 {
     font-size: 85px;
     font-family: var(--bold);
+
+    width: fit-content;
+
     margin-bottom: 15px;
 
     color: var(--cinza);
@@ -76,6 +79,7 @@ section {
 
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .container-etapas {
@@ -133,7 +137,8 @@ section {
 
 .container-entradas {
     width: calc(100% - 310px);
-    height: 100%;
+    
+    padding: 40px 0;
     
     background-color: var(--cinzaClaroOpaco);
 
@@ -146,7 +151,6 @@ section {
 
 .entradas {
     width: 85%;
-    height: 80%;
 
     display: flex;
     flex-direction: column;
@@ -158,6 +162,8 @@ section {
 .entradas > .rotulo {
     width: 100%;
     
+    margin-bottom: 10px;
+
     color: var(--cinza);
 
     line-height: .9;
@@ -180,12 +186,14 @@ textarea {
     width: 100%;
     height: 170px;
 
+    resize: none;
+
     padding: 10px 15px;
     font-size: 19px;
 
     background-color: var(--cinzaClaro);
         
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 
     border: none;
     border-radius: 30px;
@@ -194,11 +202,27 @@ textarea {
 
     color: var(--azul);
 
-    scrollbar-color: var(--azul);
-    scrollbar-width: 2px;
-    
-    overflow-y: scroll;
+}
 
+textarea::-webkit-scrollbar {
+    width: 7px;
+    position: absolute;
+}
+
+textarea::-webkit-scrollbar-track {
+    background-color: transparent;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+textarea::-webkit-scrollbar-thumb {
+    background-color: var(--azul);
+    border-radius: 20px;
+}
+
+textarea::-webkit-scrollbar-track-piece {
+    border-radius: 20px;
+    background-color: var(--branquinho);
 }
 
 .entradas > .arquivo {
@@ -243,9 +267,10 @@ textarea {
 .entradas > button {
     padding: 14px 45px;
 
-    
     font-family: var(--bold);
     font-size: 12px;
+
+    margin-top: 30px;
 
     color: var(--branco);
 
@@ -271,5 +296,5 @@ main > span {
     font-size: 22px;
 
     position: relative;
-    top: -13px;
+    top: -25px;
 }
