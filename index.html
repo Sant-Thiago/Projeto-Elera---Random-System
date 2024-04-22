@@ -53,7 +53,60 @@
 
             <div class="container-entradas">
 
-                <div class="entradas" id="container"></div>
+                <div class="entradas" id="insert_itens" style="display: flex;">
+
+                    <div class="rotulo">
+                        <p>Escreva os itens</p>
+                        <span>*Separados por linha</span>
+                    </div>
+                    <textarea id="txtDados" wrap="soft"></textarea>
+                    <div class="rotulo">
+                        <p>Upload do arquivo</p>
+                        <span>*.CSV</span>
+                    </div>
+                    <div class="arquivo">
+                        <label for="iptArquivo">
+                            Escolher Arquivo
+                            <input type="file" id="iptArquivo" accept="text/csv">
+                        </label>
+                    </div>
+                    <button>Continuar</button>
+
+                </div>
+                <div class="entradas" id="qtd_sortear" style="display: none;">
+
+                    <div class="rotulo">
+                        <p>Quantidade de Itens</p>
+                        <span>que deseja sortear</span>
+                    </div>
+                    <textarea id="input" wrap="soft"></textarea>
+                    <button>Sortear</button>
+
+                </div>
+
+                <div class="entradas" id="resultado" style="display: none;">
+                        
+                        <div class="rotulo">
+                            <p>Resultado do Sorteio</p>
+                        </div>
+                        <div class="resultado">
+                            <p>Item 1</p>
+                            <p>Item 2</p>
+                            <p>Item 3</p>
+                            <p>Item 4</p>
+                            <p>Item 5</p>
+                            <p>Item 1</p>
+                            <p>Item 2</p>
+                            <p>Item 3</p>
+                            <p>Item 4</p>
+                            <p>Item 5</p>
+                            <p>Item 1</p>
+                            <p>Item 2</p>
+                            <p>Item 3</p>
+                            <p>Item 4</p>
+                            <p>Item 5</p>
+                        </div>
+                </div>
 
             </div>
 

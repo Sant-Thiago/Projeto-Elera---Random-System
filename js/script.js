@@ -6,7 +6,7 @@ const container = document.getElementById('container');
 
 if (check1.checked) {
 
-    layoutInserir();
+    // layoutInserir();
     // check2 = //função para deixar 45%-60% transparente, e bloquear o acesso do usuario; 
     // check3 = //função para deixar 60%-80% transparente, e bloquear o acesso do usuario;
 
@@ -19,28 +19,6 @@ if (check1.checked) {
 
 };
 
-
-function layoutInserir() {
-    container.innerHTML = `
-    <div class="rotulo">
-        <p>Escreva os itens</p>
-        <span>*Separados por linha</span>
-    </div>
-    <textarea id="input" wrap="soft"></textarea>
-    <div class="rotulo">
-        <p>Upload do arquivo</p>
-        <span>*.CSV</span>
-    </div>
-    <div class="arquivo">
-        <label for="iptArquivo">
-            Escolher Arquivo
-            <input type="file" id="iptArquivo">
-        </label>
-    </div>
-    <button>Continuar</button>
-    `
-}
-
 function layoutQuantidade() {
     container = `
     AI VOCE DESENROLA DESSE EM DIANTE
@@ -48,3 +26,45 @@ function layoutQuantidade() {
     USA O LAYOUT DA FUNÇÂO ANTERIOR
     `
 }
+
+function lerCSV(arquivo) {
+    return new Promise((resolve, reject) => {
+        var reader = new FileReader();
+
+        reader.onload = function (event) {
+            var conteudo = event.target.result; 
+            var linhas = conteudo.split('\n'); 
+
+            var dados = [];
+            linhas.forEach(function (linha) {
+                var colunas = linha.split(',');
+                dados.push(colunas); 
+            });
+
+            resolve(dados); 
+        };
+
+        reader.readAsText(arquivo);
+    });
+}
+
+document.getElementById('iptArquivo').addEventListener('change', async function (event) {
+    var arquivo = event.target.files[0];
+
+    try {
+        var dadosCSV = await lerCSV(arquivo);
+        preencherTextArea(dadosCSV);
+    } catch (erro) {
+        console.error('Erro ao ler o arquivo CSV:', erro);
+    }
+});
+
+function preencherTextArea(dados) {
+    var textArea = document.getElementById('txtDados');
+    textArea.value = '';
+
+    dados.forEach(function (linha) {
+        textArea.value += linha.join('\t') + '\n';
+    });
+}
+
