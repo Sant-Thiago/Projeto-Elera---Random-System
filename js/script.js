@@ -9,21 +9,27 @@ const iconCheckEscolha = document.getElementById('iconCheckEscolha');
 const divCheckSorteio = document.getElementById('divCheckSorteio');
 const iconCheckSorteio = document.getElementById('iconCheckSorteio');
 
+window.onload = document.getElementById('txtDados').value = '';
+
+document.getElementById('titulo').addEventListener('click', function () {
+    window.location.href = 'index.html';
+});
+
 function lerCSV(arquivo) {
     return new Promise((resolve, reject) => {
         var reader = new FileReader();
 
         reader.onload = function (event) {
-            var conteudo = event.target.result; 
-            var linhas = conteudo.split('\n'); 
+            var conteudo = event.target.result;
+            var linhas = conteudo.split('\n');
 
             var dados = [];
             linhas.forEach(function (linha) {
                 var colunas = linha.split(',');
-                dados.push(colunas); 
+                dados.push(colunas);
             });
 
-            resolve(dados); 
+            resolve(dados);
         };
 
         reader.readAsText(arquivo);
@@ -41,7 +47,13 @@ document.getElementById('iptArquivo').addEventListener('change', async function 
     }
 });
 
-function mudarTela(){
+function mudarTela() {
+
+    if (itens.length == 0) {
+        alert('Insira os itens antes de prosseguir.');
+        return;
+    }
+
     document.getElementById('insert_itens').style.display = 'none';
     document.getElementById('qtd_sortear').style.display = 'flex';
 
@@ -64,6 +76,12 @@ function preencherTextArea(dados) {
 
 ganhadores = [];
 function sortear() {
+    let quantidade = document.getElementById('qtdItensSorteados').value;
+
+    if (quantidade > itens.length) {
+        alert('A quantidade de itens a serem sorteados não pode ser maior que a quantidade de itens inseridos.');
+        return;
+    }
     document.getElementById('qtd_sortear').style.display = 'none';
     document.getElementById('resultado').style.display = 'flex';
 
@@ -72,9 +90,8 @@ function sortear() {
     divCheckSorteio.classList.add('checkAtivo');
     iconCheckSorteio.classList.add('iconAtivo');
 
-    let quantidade = document.getElementById('qtdItensSorteados').value;
 
-    for(let i = 0; i < quantidade; i++) {
+    for (let i = 0; i < quantidade; i++) {
         let index = Math.floor(Math.random() * itens.length);
         let ganhador = itens[index];
         ganhadores.push(ganhador);

@@ -348,3 +348,20 @@ main > span {
     padding: 10px 20px;
     margin: 10px 0;
 }
+
+input[type="number"]{
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 19px;
+
+    background-color: var(--cinzaClaro);
+        
+    margin-bottom: 20px;
+
+    border: none;
+    border-radius: 30px;
+    
+    outline: transparent;
+
+    color: var(--azul);
+}
