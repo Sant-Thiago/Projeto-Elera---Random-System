@@ -26,23 +26,20 @@
                 <div class="etapas">
 
                     <div class="celula">
-                        <div class="check">
-                            <input type="checkbox" name="etapa" checked id="check_1">
-                            <i class="fa fa-check"></i>
+                        <div class="checkAtivo" id="divCheckInserir">
+                            <i class="fa fa-check iconAtivo" id="iconChekInserir"></i>
                         </div>
                         <p>Inserir <b>itens</b></p>
                     </div>
                     <div class="celula">
-                        <div class="check">
-                            <input type="checkbox" name="etapa" id="check_2">
-                            <i class="fa fa-check"></i>
+                        <div class="checkInativo" id="divCheckEscolha">
+                            <i class="fa fa-check iconInativo" id="iconCheckEscolha"></i>
                         </div>
                         <p>Escolha <b>quantidade</b></p>
                     </div>
                     <div class="celula">
-                        <div class="check">
-                            <input type="checkbox" name="etapa" id="check_3">
-                            <i class="fa fa-check"></i>
+                        <div class="checkInativo" id="divCheckSorteio">
+                            <i class="fa fa-check iconInativo" id="iconCheckSorteio"></i>
                         </div>
                         <p>Sorteio <b>concluído</b></p>
                     </div>
@@ -70,17 +67,18 @@
                             <input type="file" id="iptArquivo" accept="text/csv">
                         </label>
                     </div>
-                    <button>Continuar</button>
+                    <button onclick="mudarTela()">Continuar</button>
 
                 </div>
+
                 <div class="entradas" id="qtd_sortear" style="display: none;">
 
                     <div class="rotulo">
                         <p>Quantidade de Itens</p>
                         <span>que deseja sortear</span>
                     </div>
-                    <textarea id="input" wrap="soft"></textarea>
-                    <button>Sortear</button>
+                    <input type="number" id="qtdItensSorteados">
+                    <button onclick="sortear()">Sortear</button>
 
                 </div>
 
@@ -89,22 +87,8 @@
                         <div class="rotulo">
                             <p>Resultado do Sorteio</p>
                         </div>
-                        <div class="resultado">
-                            <p>Item 1</p>
-                            <p>Item 2</p>
-                            <p>Item 3</p>
-                            <p>Item 4</p>
-                            <p>Item 5</p>
-                            <p>Item 1</p>
-                            <p>Item 2</p>
-                            <p>Item 3</p>
-                            <p>Item 4</p>
-                            <p>Item 5</p>
-                            <p>Item 1</p>
-                            <p>Item 2</p>
-                            <p>Item 3</p>
-                            <p>Item 4</p>
-                            <p>Item 5</p>
+                        <div class="resultado" id="listaDeGanhadores">
+                            <li>Item 2</li>
                         </div>
                 </div>
 

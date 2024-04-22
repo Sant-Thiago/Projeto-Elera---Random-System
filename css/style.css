@@ -104,7 +104,26 @@ section {
     align-items: center;
 }
 
-.check {
+.checkInativo {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: var(--cinzaClaro);
+}
+
+.iconInativo {
+    font-size: 29px;
+
+    color: var(--azul);
+}
+
+.checkAtivo {
     width: 50px;
     height: 50px;
 
@@ -117,15 +136,16 @@ section {
     background-color: var(--azul);
 }
 
-.check > input {
-    display: none;
-}
-
-.check > i {
+.iconAtivo {
     font-size: 29px;
 
     color: var(--branco);
 }
+
+.check > input {
+    display: none;
+}
+
 
 .celula > p {
     margin-left: 25px;

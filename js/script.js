@@ -1,31 +1,13 @@
-const check1 = document.getElementById('check_1');
-const check2 = document.getElementById('check_2');
-const check3 = document.getElementById('check_3');
-
 const container = document.getElementById('container');
 
-if (check1.checked) {
+const divChekInserir = document.getElementById('divCheckInserir');
+const iconCheckInserir = document.getElementById('iconCheckInserir');
 
-    // layoutInserir();
-    // check2 = //função para deixar 45%-60% transparente, e bloquear o acesso do usuario; 
-    // check3 = //função para deixar 60%-80% transparente, e bloquear o acesso do usuario;
+const divCheckEscolha = document.getElementById('divCheckEscolha');
+const iconCheckEscolha = document.getElementById('iconCheckEscolha');
 
-} else if (check2.checked) {
-    // check2 = //função mudar a cor do check e permite voltar para o check1
-    // check3 = //função para deixar 60%-80% transparente, e bloquear o acesso do usuario;
-
-} else {
-    // check3 = //função mudar a cor do check e permite voltar para o check1 e check2
-
-};
-
-function layoutQuantidade() {
-    container = `
-    AI VOCE DESENROLA DESSE EM DIANTE
-
-    USA O LAYOUT DA FUNÇÂO ANTERIOR
-    `
-}
+const divCheckSorteio = document.getElementById('divCheckSorteio');
+const iconCheckSorteio = document.getElementById('iconCheckSorteio');
 
 function lerCSV(arquivo) {
     return new Promise((resolve, reject) => {
@@ -59,12 +41,49 @@ document.getElementById('iptArquivo').addEventListener('change', async function 
     }
 });
 
+function mudarTela(){
+    document.getElementById('insert_itens').style.display = 'none';
+    document.getElementById('qtd_sortear').style.display = 'flex';
+
+    divCheckEscolha.classList.remove('checkInativo');
+    iconCheckEscolha.classList.remove('iconInativo');
+    divCheckEscolha.classList.add('checkAtivo');
+    iconCheckEscolha.classList.add('iconAtivo');
+}
+
+var itens = [];
 function preencherTextArea(dados) {
     var textArea = document.getElementById('txtDados');
     textArea.value = '';
 
     dados.forEach(function (linha) {
+        itens.push(linha);
         textArea.value += linha.join('\t') + '\n';
     });
 }
 
+ganhadores = [];
+function sortear() {
+    document.getElementById('qtd_sortear').style.display = 'none';
+    document.getElementById('resultado').style.display = 'flex';
+
+    divCheckSorteio.classList.remove('checkInativo');
+    iconCheckSorteio.classList.remove('iconInativo');
+    divCheckSorteio.classList.add('checkAtivo');
+    iconCheckSorteio.classList.add('iconAtivo');
+
+    let quantidade = document.getElementById('qtdItensSorteados').value;
+
+    for(let i = 0; i < quantidade; i++) {
+        let index = Math.floor(Math.random() * itens.length);
+        let ganhador = itens[index];
+        ganhadores.push(ganhador);
+        itens.splice(index, 1);
+    }
+
+    document.getElementById('listaDeGanhadores').innerHTML = '';
+
+    ganhadores.forEach(function (ganhador) {
+        document.getElementById('listaDeGanhadores').innerHTML += '<p>' + ganhador.join('\t') + '</p>';
+    });
+}
